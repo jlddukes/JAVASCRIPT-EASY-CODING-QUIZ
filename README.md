@@ -19,6 +19,6 @@ TO use this program, you sound click the 'start quiz' button which will then lea
 
 ### Link to Webpage
 
-ttps://jlddukes.github.io/JAVASCRIPT-EASY-CODING-QUIZ/
+https://jlddukes.github.io/JAVASCRIPT-EASY-CODING-QUIZ/
 
 ## Credits
