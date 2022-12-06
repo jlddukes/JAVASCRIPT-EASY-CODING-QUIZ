@@ -9,14 +9,14 @@ var timerInterval ;
 
 
 
-
-
-
+var topbox = document.querySelector(".topbox")
+var questionTitle = document.getElementById("questions")
+var startbutton = document.getElementById("startButton")
 
 var questionEl = document.getElementById("question")
 var questionIndex = 0
 
-
+// startbutton.addEventListener("click", revealQuestion)
 
 
 
@@ -30,27 +30,27 @@ var questionIndex = 0
 var questions = [
     {
         questionText: "Question 1 Text",
-        answersText: ["Answer 1","Answer 2","Answer 3","Answer 4",],
+        answersText: ["1Answer 1","1Answer 2","1Answer 3","1Answer 4",],
         correctText: "Answer 1"
     },
     {
         questionText: "Question 2 Text",
-        answersText: ["Answer 1","Answer 2","Answer 3","Answer 4",],
+        answersText: ["2Answer 1","2Answer 2","3Answer 3","4Answer 4",],
         correctText: "Answer 1"
     },
     {
         questionText: "Question 3 Text",
-        answersText: ["Answer 1","Answer 2","Answer 3","Answer 4",],
+        answersText: ["3Answer 1","3Answer 2","3Answer 3","3Answer 4",],
         correctText: "Answer 1"
     },
     {
         questionText: "Question 4 Text",
-        answersText: ["Answer 1","Answer 2","Answer 3","Answer 4",],
+        answersText: ["4Answer 1","4Answer 2","4Answer 3","4Answer 4",],
         correctText: "Answer 1"
     },
     {
         questionText: "Question 5 Text",
-        answersText: ["Answer 1","Answer 2","Answer 3","Answer 4",],
+        answersText: ["5Answer 1","5Answer 2","5Answer 3","5Answer 4",],
         correctText: "Answer 1"
     },
 ]
@@ -65,6 +65,7 @@ function revealQuestion() {
         var answerButton= document.createElement("button")  //create element
         answerButton.textContent= options //add to the text
         var questionBox= document.querySelector(".bigbox")
+        startbutton.addEventListener("click", revealQuestion)   //added event listener
         questionBox.appendChild(answerButton) //do not forget this step, APPEND to page
     }
 
@@ -85,25 +86,25 @@ function countdown() {
 
 function startquiz() {
     countdown()
-    container.classList.add("bigbox");
-    questionEl.classList.remove("bigbox");
+    topbox.classList.add("hide");
+    questionEl.classList.remove("hide");
 //calling the function to show the array 
-    questionsTitle.textContent = questions[questionindex].questionText
-    choice1.textContent = questions[questionindex].answersText[0]
-    choice2.textContent = questions[questionindex].answersText[1]
-    choice3.textContent = questions[questionindex].answersText[2]
-    choice4.textContent = questions[questionindex].answersText[3]
-}
+//     questionsTitle.textContent = questions[questionindex].questionText
+//     choice1.textContent = questions[questionindex].answersText[0]
+//     choice2.textContent = questions[questionindex].answersText[1]
+//     choice3.textContent = questions[questionindex].answersText[2]
+//     choice4.textContent = questions[questionindex].answersText[3]
+// }
 
-function renderNext(event) {
-     console.log(event.target.textContent) 
-     console.log(event)
-    questionindex++
-    questionsTitle.textContent = questions[questionindex].questionText
-    choice1.textContent = questions[questionindex].answersText[0]
-    choice2.textContent = questions[questionindex].answersText[1]
-    choice3.textContent = questions[questionindex].answersText[2]
-    choice4.textContent = questions[questionindex].answersText[3]
+// function renderNext(event) {
+//      console.log(event.target.textContent) 
+//      console.log(event)
+//     questionindex++
+//     questionsTitle.textContent = questions[questionindex].questionText
+//     choice1.textContent = questions[questionindex].answersText[0]
+//     choice2.textContent = questions[questionindex].answersText[1]
+//     choice3.textContent = questions[questionindex].answersText[2]
+//     choice4.textContent = questions[questionindex].answersText[3]
 }
 
 
