@@ -16,16 +16,20 @@
     padding: 0; */
     margin: auto;
     width: 50%;
-    border: 3px solid green;
+    border: 3px solid rgb(64, 0, 128);
     padding: 10px;
     text-align: center;
     /* display: none; */
+    
 }
  
-.hide {
+
+
+
+/* .hide {
 display: none;
 
-}
+} */
 
 
 

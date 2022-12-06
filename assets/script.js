@@ -8,15 +8,15 @@ var timerInterval ;
 
 
 
-var buttonClicked = 
+
 var topbox = document.querySelector(".topbox")
 var questionTitle = document.getElementById("questions")
 var startbutton = document.getElementById("startButton")
 
-var questionEl = document.getElementById("question")
+var questionEl = document.querySelector(".bigbox")
 var questionIndex = 0
 
-// startbutton.addEventListener("click", revealQuestion)
+startbutton.addEventListener("click", startquiz)
 
 
 
@@ -36,22 +36,22 @@ var questions = [
     {
         questionText: "Question 2 Text",
         answersText: ["2Answer 1","2Answer 2","3Answer 3","4Answer 4",],
-        correctText: "Answer 2"
+        correctText: "Answer 1"
     },
     {
         questionText: "Question 3 Text",
         answersText: ["3Answer 1","3Answer 2","3Answer 3","3Answer 4",],
-        correctText: "Answer 3"
+        correctText: "Answer 1"
     },
     {
         questionText: "Question 4 Text",
         answersText: ["4Answer 1","4Answer 2","4Answer 3","4Answer 4",],
-        correctText: "Answer 4"
+        correctText: "Answer 1"
     },
     {
         questionText: "Question 5 Text",
         answersText: ["5Answer 1","5Answer 2","5Answer 3","5Answer 4",],
-        correctText: "Answer 5"
+        correctText: "Answer 1"
     },
 ]
 
@@ -59,7 +59,7 @@ var questions = [
 function revealQuestion() {
     var currentQuestion= questions[questionIndex]
     questionEl.textContent= currentQuestion.questionText
-    for (let i = 0; i < currentQuestion.questions.length; i++) {
+    for (let i = 0; i < currentQuestion.answersText.length; i++) {
         var options= currentQuestion.answersText[i]
         console.log(options)
         var answerButton= document.createElement("button")  //create element
@@ -77,17 +77,23 @@ function countdown() {
         timer.textContent=secondsLeft;
 
         if(secondsLeft === 0) {
-            clearInterval(timerInverval)
+            clearInterval(timerInterval)
         }
-    },1000);
+    }, 1000);
 
 }
 
 
 function startquiz() {
     countdown()
-    topbox.classList.add("hide");
-    questionEl.classList.remove("hide");
+    topbox.classList.add("bigbox");
+    questionEl.classList.remove("topbox");
+
+
+    revealQuestion()
+
+
+
 
 
 
@@ -117,12 +123,8 @@ function startquiz() {
 
 //lookup set attribute for javascript
 //do a function, that has an event listener. 
-revealQuestion()    ///
+
 
 
 //do timer and start screen for the quiz
 //google how to cycle through array of question
-
-
-
-///revisit WEB APIS section for score and initials storage 
